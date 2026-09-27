@@ -4,19 +4,21 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: ergonautkb
       url-base: https://github.com/ergonautkb
-    - name: prospector
-      url-base: https://github.com/t-ogura
+    - name: my-prospector
+      url-base: https://github.com/mpich
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
+      
     - name: ergonautkb-zmk-module
       remote: ergonautkb
       revision: main
+      
     - name: prospector-zmk-module
-      remote: prospector
-      revision: v2.2.3 # Use v2.0.0 for ZMK ≤0.3 (Zephyr 3.x)
+      remote: my-prospector
+      revision: fix-peripheral-modifier-listener
       path: modules/prospector-zmk-module
   self:
     path: config
